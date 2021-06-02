@@ -30,7 +30,7 @@ class form extends Component {
                         <h1>Create Post</h1>
                         <br/>
                         <form> 
-                        <div className="card">
+                        
                         <div className="card-body"> 
                             <div className="input-group mb-3"> 
                             <div className="input-group">
@@ -53,7 +53,7 @@ class form extends Component {
                             </div>
                             </div>
 
-                            </div>
+            
                         </form>
                     </div>
                 </main>

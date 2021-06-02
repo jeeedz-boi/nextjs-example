@@ -7,21 +7,18 @@ import EditComponent from './EditComponent'
 class allPost extends Component {
     render() {
         return (
-            <div>
-                <main className={styles.main} > 
-                    <div className="card text-center" style={{boxShadow:"2px 2px 5px gray"}}> 
+            <div className="card">
+                    <div className="card text-center" style={{ boxShadow:"2px 2px 5px gray" }}> 
                         <h1>All Post</h1>
-                        <form> 
-                        <div>
+                        <div className="card">
                             {this.props.posts.map((post)=> (
-                                <div key={post.id}>
+                                <div className="card-body" key={ post.id }>
                                     {post.editing ? <EditComponent post={post} key={post.id}></EditComponent> : <Post key={post.id} post={post}> </Post>}
                                 </div>
-                            ))} 
+                            ))}
                         </div>
-                        </form>
                     </div>
-                </main>
+                
             </div>
         )
     }
