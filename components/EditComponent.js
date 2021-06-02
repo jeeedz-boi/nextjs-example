@@ -21,7 +21,8 @@ class EditComponent extends Component {
     render() {
         return (
             <div>
-                <form> 
+                <div className="card">
+                    <div className="card-body">  
                     <div className="input-group mb-3"> 
                     <div className="input-group">
                         <span className="input-group-text" id="basic-addon1">Edit Title</span>
@@ -37,8 +38,8 @@ class EditComponent extends Component {
                     <div className="d-flex justify-content-start">
                         <button type="button" className="btn btn-primary" onClick={this.handleEdit}>Edit</button>
                     </div>
-
-                </form>
+                    </div>
+                </div>
             </div>
         )
     }

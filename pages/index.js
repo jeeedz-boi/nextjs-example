@@ -14,7 +14,7 @@ class ClassHome extends Component {
   };
   render () {
     return (
-      <div className={styles.container}>
+      <div>
       <Head>
         <title>Jeeedz</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
