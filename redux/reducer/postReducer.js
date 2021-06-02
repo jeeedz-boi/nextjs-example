@@ -1,4 +1,4 @@
-import {ADD_POST, EDIT_POST, DELETE_POST, UPDATE}  from '../actions/action' 
+import { ADD_POST, EDIT_POST, DELETE_POST, UPDATE_POST }  from '../actions/action' 
 
 const postReducer = (state = [], action) => {
     switch (action.type) {
@@ -8,7 +8,7 @@ const postReducer = (state = [], action) => {
             return state.filter((post)=> post.id !== action.id)
         case EDIT_POST:
             return state.map((post)=> post.id === action.id ? {...post, editing: true} : post)
-        case UPDATE: 
+        case UPDATE_POST: 
             return state.map((post) => {
                 if (post.id === action.id) {
                     console.log('state.data:',post)
