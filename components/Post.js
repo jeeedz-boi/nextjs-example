@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { DELETE_POST, EDIT_POST }  from '../redux/actions/action' 
+import { DELETE_POST, EDIT_POST }  from '../redux/actions/actions' 
 
 class Post extends Component {
     render() {

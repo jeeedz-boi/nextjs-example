@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from '../styles/Home.module.css'
 import { connect } from 'react-redux'
-import { ADD_POST }  from '../redux/actions/action' 
+import { ADD_POST }  from '../redux/actions/actions' 
 
 
 class form extends Component {

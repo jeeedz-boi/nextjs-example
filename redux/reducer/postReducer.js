@@ -1,4 +1,4 @@
-import { ADD_POST, EDIT_POST, DELETE_POST, UPDATE_POST }  from '../actions/action' 
+import { ADD_POST, EDIT_POST, DELETE_POST, UPDATE_POST } from '../actions/actions' 
 
 const postReducer = (state = [], action) => {
     switch (action.type) {

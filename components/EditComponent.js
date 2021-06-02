@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { UPDATE_POST }  from '../redux/actions/action' 
+import { UPDATE_POST }  from '../redux/actions/actions' 
 
 class EditComponent extends Component {
     handleEdit = (e) => {
