@@ -35,8 +35,8 @@ class EditComponent extends Component {
                     </div>
                     <textarea cols="23" className="form-control" ref={(input)=> this.getMsg = input} defaultValue={this.props.post.msg} rows="5" placeholder="post here" required/>
                     <br/>
-                    <div className="d-flex justify-content-start">
-                        <button type="button" className="btn btn-primary" onClick={this.handleEdit}>Edit</button>
+                    <div className="d-flex justify-content-end">
+                        <button type="button" className="btn btn-primary" onClick={this.handleEdit}>Done</button>
                     </div>
                     </div>
                 </div>
