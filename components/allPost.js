@@ -24,10 +24,10 @@ class allPost extends Component {
     }
 }
 
-const mapDispatchToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         posts: state
     }
 };
 
-export default connect(mapDispatchToProps)(allPost)
+export default connect(mapStateToProps)(allPost)

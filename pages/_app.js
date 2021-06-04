@@ -2,12 +2,14 @@
 import 'bootstrap/dist/css/bootstrap.css'
 
 import '../styles/globals.css'
-import {Provider} from 'react-redux'
-import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { createStore, compose,  applyMiddleware } from 'redux'
 import postReducer from '../redux/reducer/postReducer'
+import thunk from 'redux-thunk';
 
-const store = process.browser ? createStore(postReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) : createStore(postReducer)
-const isDark = true
+const store = process.browser ? 
+              createStore(postReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())) 
+              : createStore(postReducer, applyMiddleware(thunk))
 
 function MyApp({ Component, pageProps }) {
   return (

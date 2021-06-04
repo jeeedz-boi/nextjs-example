@@ -1,4 +1,4 @@
-import * as actionType from '../actions/actions' 
+import * as actionType from '../actions/actionsConst' 
 
 const postReducer = (state = [], action) => {
     switch (action.type) {
@@ -11,8 +11,6 @@ const postReducer = (state = [], action) => {
         case actionType.UPDATE_POST: 
             return state.map((post) => {
                 if (post.id === action.id) {
-                    console.log('state.data:',post)
-                    console.log('action.data:',action.data)
                     return {
                         ...post,
                         title: action.data.newTitle,

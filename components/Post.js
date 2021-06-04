@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { DELETE_POST, EDIT_POST }  from '../redux/actions/actions' 
-
+import { DELETE_POST, EDIT_POST }  from '../redux/actions/actionsConst' 
+import { postAction } from '../redux/actions/actionPreform'
 class Post extends Component {
     render() {
         return (
-            <div class="col-auto">
+            <div className="col-auto">
                 <br/><br/>
                 <div className="card"> 
                     <div className="card-body"> 
@@ -13,8 +13,10 @@ class Post extends Component {
                         <br/>
                         <h4 className='card-text'>Post message: {this.props.post.msg}</h4>
                     <div className='d-flex justify-content-end'> 
-                        <button className="btn btn-warning" onClick={()=> this.props.dispatch({type: EDIT_POST, id: this.props.post.id})}>Edit</button>
-                        <button className="btn btn-danger" onClick={()=> this.props.dispatch({type: DELETE_POST, id: this.props.post.id})}>Delete</button>
+                        {/* <button className="btn btn-warning" onClick={()=> this.props.dispatch({type: EDIT_POST, id: this.props.post.id})}>Edit</button>
+                        <button className="btn btn-danger" onClick={()=> this.props.dispatch({type: DELETE_POST, id: this.props.post.id})}>Delete</button> */}
+                        <button className="btn btn-warning" onClick={ () => this.props.postAction(EDIT_POST, this.props.post.id) }>Edit</button>
+                        <button className="btn btn-danger" onClick={ () => this.props.postAction(DELETE_POST, this.props.post.id) }>Delete</button>
                     </div>
                     </div>
                 </div>
@@ -23,5 +25,15 @@ class Post extends Component {
     }
 }
 
+const mapStateToProps  = (state) => {
+    return {
+        posts: state
+    }
+};
 
-export default connect()(Post)
+const mapDispatchToProps = {
+    postAction
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post)

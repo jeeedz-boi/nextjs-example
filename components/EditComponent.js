@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { UPDATE_POST }  from '../redux/actions/actions' 
+import { UPDATE_POST }  from '../redux/actions/actionsConst' 
+import { postAction } from '../redux/actions/actionPreform'
 
 class EditComponent extends Component {
     handleEdit = (e) => {
@@ -11,11 +12,12 @@ class EditComponent extends Component {
             newTitle,
             newMsg
         }
-        this.props.dispatch({
-            type: UPDATE_POST,
-            id: this.props.post.id,
-            data: data
-        })
+        // this.props.dispatch({
+        //     type: UPDATE_POST,
+        //     id: this.props.post.id,
+        //     data: data
+        // })
+        this.props.postAction(UPDATE_POST, {id: this.props.post.id, data})
     };
 
     render() {
@@ -45,4 +47,14 @@ class EditComponent extends Component {
     }
 }
 
-export default connect()(EditComponent)
+const mapStateToProps  = (state) => {
+    return {
+        posts: state
+    }
+};
+
+const mapDispatchToProps = {
+    postAction
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditComponent)
