@@ -65,14 +65,8 @@ class form extends Component {
     }
 }
 
-const mapStateToProps  = (state) => {
-    return {
-        posts: state
-    }
-};
-
 const mapDispatchToProps = {
     postAction
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(form)
+export default connect(null, mapDispatchToProps)(form)

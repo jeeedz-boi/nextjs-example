@@ -47,14 +47,8 @@ class EditComponent extends Component {
     }
 }
 
-const mapStateToProps  = (state) => {
-    return {
-        posts: state
-    }
-};
-
 const mapDispatchToProps = {
     postAction
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditComponent)
+export default connect(null, mapDispatchToProps)(EditComponent)

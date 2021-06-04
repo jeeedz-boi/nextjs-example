@@ -25,15 +25,9 @@ class Post extends Component {
     }
 }
 
-const mapStateToProps  = (state) => {
-    return {
-        posts: state
-    }
-};
-
 const mapDispatchToProps = {
     postAction
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post)
+export default connect(null, mapDispatchToProps)(Post)
