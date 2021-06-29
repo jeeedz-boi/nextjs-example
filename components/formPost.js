@@ -5,6 +5,19 @@ import { ADD_POST }  from '../redux/actions/actionsConst'
 import { postAction } from '../redux/actions/actionPreform'
 
 class form extends Component {
+    constructor(props) {
+        super(props);
+        // this.addPost = this.addPost.bind(this)
+    }
+
+    postActions = (actionState, data) => {
+        this.props.postAction(actionState, data);
+    };
+
+    addPost = (data) => {
+        this.postActions(ADD_POST, data);
+    };
+
     handleSubmit = (e) => {
         e.preventDefault();
         const title = this.getTitle.value
@@ -19,8 +32,9 @@ class form extends Component {
         //     type:ADD_POST,
         //     data
         // })
-        this.props.postAction(ADD_POST, data)
-        
+        // this.props.postAction(ADD_POST, data)
+        this.addPost(data)
+
         this.getTitle.value = ""
         this.getMsg.value = ""
     };
@@ -65,8 +79,15 @@ class form extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        posts: state
+    }
+};
+
 const mapDispatchToProps = {
     postAction
 }
 
-export default connect(null, mapDispatchToProps)(form)
+export default connect(mapStateToProps, mapDispatchToProps)(form)

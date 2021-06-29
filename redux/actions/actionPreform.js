@@ -18,5 +18,9 @@ export const postAction = (actionState, event = null) => {
             return async (dispatch) => {
                 return dispatch({type: actionTypes.UPDATE_POST, id: event.id ,data: event.data})
             }
+        case actionTypes.SET_ACCESS_TOKEN:
+            return async (dispatch) => {
+                return dispatch({type: actionTypes.SET_ACCESS_TOKEN, data: event})
+            }
     }
 }

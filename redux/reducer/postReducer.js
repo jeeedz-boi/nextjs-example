@@ -22,6 +22,12 @@ const postReducer = (state = [], action) => {
                     return post
                 }
             })
+        case actionType.SET_ACCESS_TOKEN:
+            return Object.assign({}, state, {
+                ...state,
+                accessToken: action.data
+              }); 
+
         default:
             return state;
     }
